@@ -1,0 +1,61 @@
+.formContainer {
+  background-color: #232529;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+
+  .formWrapper {
+    background-color: #ffffff;
+    padding: 1.5em 3em;
+    border-radius: 1.5em;
+    text-align: center;
+
+    .title {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #232529;
+      margin-bottom: .3em;
+    }
+
+    .registerForm {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em; 
+
+      input {
+        border: none;
+        border-bottom: 1px solid #232529;
+        padding: .4em;
+      &::placeholder {
+          color: #494a4c;
+      }
+      }
+
+      .fileInput {
+        display: flex;
+        gap: .8em;
+        align-items: center;
+
+        .fileButton {
+          background-color: #232529;
+          color: #ffffff;
+          border: none;
+          padding: .4em 1em;
+          border-radius: .2em;
+          cursor: pointer;
+        }
+      }
+
+      .signUpButton {
+        background-color: #232529;
+        color: #ffffff;
+        border: none;
+        padding: .6em 1em;
+        border-radius: .3em;
+        cursor: pointer;
+      }
+    }
+  }
+}
