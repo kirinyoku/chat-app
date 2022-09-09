@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 3em;
+
+  .burgerMenu {
+    flex: 1;
+    margin: auto 0.5em;
+  }
+
+  .search {
+    flex: 5;
+  }
+}
