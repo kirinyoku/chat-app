@@ -1,14 +1,84 @@
 .navbar {
   display: flex;
   align-items: center;
-  height: 3em;
+  margin: 1em auto;
 
-  .burgerMenu {
+  .showSlidebar {
     flex: 1;
     margin: auto 0.5em;
+
+    .hamburgerIcon {
+      transition: color 100ms ease-in-out;
+    }
+
+    .hamburgerIcon:hover {
+      color: #b1b1b1;
+    }
   }
 
   .search {
-    flex: 5;
+    flex: 16;
   }
+}
+
+.slidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 20%;
+  background-color: #181818;
+  transition: transform 100ms ease-out;
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    height: 100%;
+
+    .myImage {
+      height: 3.5em;
+      width: 3.5em;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1em;
+    }
+
+    .nickname {
+      font-size: 2.5rem;
+    }
+
+    .logoutButton {
+      font-size: 2rem;
+      color: #ffffff;
+      background: none;
+      border: none;
+      padding: 0.2em 0;
+      cursor: pointer;
+      transition: color 100ms ease-out;
+    }
+  
+    .logoutButton:hover {
+      color: #b1b1b1;
+    }
+  }
+
+  .hideSlidebar {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+
+    .arrowIcon {
+      transition: color 100ms ease-in-out;
+    }
+
+    .arrowIcon:hover {
+      color: #b1b1b1;
+    }    
+  }
+}
+
+.hidden {
+  transform: translateX(-100%);
 }
