@@ -1,7 +1,23 @@
 .chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex: 2;
   background-color: #151515;
   background-image: url("https://web.telegram.org/z/chat-bg-pattern-dark.ad38368a9e8140d0ac7d.png");
   background-size: 30%;
   mix-blend-mode: unset;
+
+  .chatInfo {
+    display: flex;
+    align-items: center;
+    background-color: #212121;
+    height: 7%;
+    border-bottom: 1px solid #3e3e3e;
+
+    .chatUserName {
+      font-size: 2rem;
+      margin: 1em;
+    }
+  }
 }

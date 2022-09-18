@@ -7,10 +7,6 @@ export const Sidebar = () => {
     <div className="sidebar">
       <Navbar />
       <User />
-      <User />
-      <User />
-      <User />
-      <User />
     </div>
   )
 }

@@ -1,0 +1,45 @@
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  height: 3.5em;
+  padding: 0.6em;
+  color: #c4c4c4;
+  background-color: #1c1c1c;
+  border-top: 1px solid #3e3e3e;
+
+  .input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    label {
+      .attach {
+        height: 1.8em;
+        transform: rotate(30deg);
+        cursor: pointer;
+      }
+    }
+  
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      color: #c4c4c4;
+      background-color: #1c1c1c;
+      font-size: 2rem;
+    }
+  }
+
+  .send {
+    display: flex;
+    align-items: center;
+
+    .sendButton {
+      color: white;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 2.5rem;
+    }
+  }
+}
