@@ -1,11 +1,11 @@
 .navbar {
   display: flex;
-  align-items: center;
   margin: 1em auto;
 
   .showSlidebar {
     flex: 1;
-    margin: auto 0.5em;
+    height: 1em;
+    margin: 0 0.5em;
 
     .hamburgerIcon {
       transition: color 100ms ease-in-out;
@@ -17,7 +17,7 @@
   }
 
   .search {
-    flex: 16;
+    flex: 16;  
   }
 }
 

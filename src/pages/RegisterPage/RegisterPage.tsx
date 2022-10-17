@@ -4,6 +4,7 @@ import { auth, storage, db } from "../../firebase";
 import { useState } from "react";
 import { doc, setDoc } from "firebase/firestore"; 
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./RegisterPage.scss"; 
 
@@ -90,7 +91,7 @@ export const RegisterPage = () => {
           </div>
           <button className="signUpButton">Sign up</button>
           {err && <span>Something went wrong</span>}
-          <p>You do have an account? Login</p>
+          <p>You do have an account? <Link to="/login" style={{color: 'black'}}>Login</Link></p>
         </form>
       </div>
     </div>

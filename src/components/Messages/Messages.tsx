@@ -6,8 +6,8 @@ export const Messages = () => {
   return (
     <div className="messages">
       <Message />
-      <Message />
-      <Message />
+      <Message type="owner"/>
+      <Message type="owner"/>
       <Message />
     </div>
   )

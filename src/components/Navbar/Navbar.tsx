@@ -2,12 +2,17 @@ import { Search } from "../Search/Search";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsArrowBarLeft } from "react-icons/bs";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 import "./Navbar.scss";
 
-export const Navbar = () => {
+export const Navbar = (props: any) => {
 
   const [slidebar, setSlidebar] = useState(false);
+  const { currentUser }: any = useContext(AuthContext);
 
   const toggleSlidebar = () => {
     if (!slidebar) {
@@ -29,7 +34,7 @@ export const Navbar = () => {
           />  
         </div>
         <div className="search">
-          <Search />
+          <Search setUser={props.setUser} setError={props.setError}/>
         </div>
       </div>
       <div className={slidebar ? "slidebar" : "slidebar hidden"}>
@@ -43,11 +48,11 @@ export const Navbar = () => {
         </div>
         <aside>
           <div className="userInfo">
-            <img className='myImage' src="https://pbs.twimg.com/profile_images/1531985396174921729/Fjs8B2Dz_400x400.jpg" alt="avatar" />
-            <div className="nickname">Kirin</div>
-            <div className="email">123456@gmail.com</div>
+            <img className='myImage' src={currentUser.photoURL} alt="avatar" />
+            <div className="nickname">{currentUser.displayName}</div>
+            <div className="email">{currentUser.email}</div>
           </div>
-          <button className="logoutButton">Log out</button>
+          <button className="logoutButton" onClick={() => signOut(auth)}>Log out</button>
         </aside>
       </div>
     </>
