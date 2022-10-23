@@ -4,7 +4,7 @@ import { auth } from "../firebase";
 
 export const AuthContext = createContext<any>(null);
 
-interface ContextProviderProps {
+export interface ContextProviderProps {
   children?: React.ReactNode;
 };
 

@@ -1,13 +1,15 @@
 import "./User.scss";
 
-export const User = () => {
+export const User = ({ userInfo, onClick, lastMessage}: any) => {
+
+  console.log(userInfo);
 
   return (
-    <div className="user">
-      <img className="userImage" src="https://pbs.twimg.com/profile_images/1531985396174921729/Fjs8B2Dz_400x400.jpg" alt="" />
+    <div className="user" onClick={onClick}>
+      <img className="userImage" src={userInfo.photoUrl} alt="" />
       <div className="userInfo">
-        <span className="userName">Kirin</span>
-        <p className="userMessage">Hello World</p>  
+        <span className="userName">{userInfo.displayName}</span>
+        <p className="userMessage">{lastMessage?.text}</p>  
       </div>
     </div>
   )

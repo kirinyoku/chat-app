@@ -1,0 +1,22 @@
+.chats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 2;
+  background-color: #212121;
+  background-size: 30%;
+  mix-blend-mode: unset;
+
+  .userChatInfo {
+    display: flex;
+    align-items: center;
+    background-color: #212121;
+    height: 7%;
+    border-bottom: 1px solid #3e3e3e;
+
+    span {
+      font-size: 2rem;
+      margin: 1em;
+    }
+  }
+}

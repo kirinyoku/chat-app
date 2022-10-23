@@ -29,7 +29,14 @@ export const Search = (props: any) => {
     <div>
       <div className="search">
         <div className="serachForm">
-          <input type="text" placeholder="Search" autoFocus onKeyDown={handleKey}  onChange={(e) => setUsername(e.target.value)}/>
+          <input 
+            type="text" 
+            placeholder="Search" 
+            autoFocus 
+            onKeyDown={handleKey}  
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
+            />
         </div>
       </div>
     </div>
