@@ -22,7 +22,8 @@
     .registerForm {
       display: flex;
       flex-direction: column;
-      gap: 1.2em; 
+      gap: 1.2em;
+      width: 400px; 
 
       input {
         border: none;
@@ -48,13 +49,28 @@
         }
       }
 
+      .link {
+        text-decoration: none;
+        color: #232529;
+      &:hover {
+        text-decoration: underline;    
+      }
+      }
+
       .signUpButton {
         background-color: #232529;
         color: #ffffff;
         border: none;
-        padding: .6em 1em;
+        padding: .7em 1em;
         border-radius: .3em;
         cursor: pointer;
+      }
+
+      .errorMessage {
+        background-color: #f63d3d;
+        color: #ffffff;
+        padding: 0.5em;
+        border-radius: 0.3em;
       }
     }
   }

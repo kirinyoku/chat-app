@@ -25,7 +25,9 @@
 
     .userMessage {
       font-size: 1.5rem;
-      color: #adadad;  
+      height: 2rem;
+      color: #adadad;
+      overflow: hidden;  
     }
   }
 }

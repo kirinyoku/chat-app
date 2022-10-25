@@ -41,6 +41,21 @@
         border-radius: .3em;
         cursor: pointer;
       }
+
+      .link {
+        text-decoration: none;
+        color: #232529;
+      &:hover {
+        text-decoration: underline;    
+      }
+      }
+
+      .errorMessage {
+        background-color: #f63d3d;
+        color: #fff;
+        padding: 0.5em;
+        border-radius: 0.3em;
+      }
     }
   }
 }

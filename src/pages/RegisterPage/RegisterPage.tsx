@@ -10,7 +10,7 @@ import "./RegisterPage.scss";
 
 export const RegisterPage = () => {
 
-  const [err, setErr] = useState(false);
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e: any) => {
@@ -23,10 +23,9 @@ export const RegisterPage = () => {
     const file = e.target[3].files[0];
 
     try {
+
       const response = await createUserWithEmailAndPassword(auth, email, password);
-
       const storageRef = ref(storage, displayName);
-
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       // Register three observers:
@@ -49,7 +48,7 @@ export const RegisterPage = () => {
           }
         }, 
         (error) => {
-          setErr(true);
+          setError(true);
         }, 
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then( async (downloadURL) => {
@@ -69,7 +68,7 @@ export const RegisterPage = () => {
         }
       );
     } catch(err) {
-      setErr(true);
+      setError(true);
       console.log(err);
     }
   }
@@ -82,16 +81,18 @@ export const RegisterPage = () => {
           <input type="text" placeholder="display name"/>
           <input type="email" placeholder="email"/>
           <input type="password" placeholder="password"/>
-          <input style={{display: "none"}} type="file" id="file" />
+          <input style={{display: "none"}} type="file" id="file" accept="image/*"/>
           <div className="fileInput">
             <label htmlFor="file">
               <div className="fileButton">Choose file</div>  
             </label>
-          <span>Add to avatar</span>
+          <span>Add an image</span>
           </div>
           <button className="signUpButton">Sign up</button>
-          {err && <span>Something went wrong</span>}
-          <p>You do have an account? <Link to="/login" style={{color: 'black'}}>Login</Link></p>
+          <p>You do have an account? <Link to="/login" className="link">Login</Link></p>
+          {error && <div className="errorMessage">
+            <p>Something went wrong. User Register failed.</p>  
+          </div>}
         </form>
       </div>
     </div>

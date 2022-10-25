@@ -8,7 +8,7 @@ import "./LoginPage.scss";
 
 export const LoginPage = () => {
 
-  const [err, setErr] = useState(false);
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e: any) => {
@@ -22,8 +22,7 @@ export const LoginPage = () => {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/")
     } catch(err) {
-      setErr(true);
-      console.log(err);
+      setError(true);
     }
   }
 
@@ -35,7 +34,10 @@ export const LoginPage = () => {
           <input type="email" placeholder="email"/>
           <input type="password" placeholder="password"/>
           <button className="logInButton">Sign in</button>
-          <p>You don't have an account? <Link to="/register" style={{color: 'black'}}>Register</Link></p>
+          <p>You don't have an account? <Link to="/register" className="link">Register</Link></p>
+          {error && <div className="errorMessage">
+            <p>Your email and password not match.<br/>Please try again.</p>
+          </div>}
         </form>
       </div>
     </div>

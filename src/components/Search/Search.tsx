@@ -9,6 +9,7 @@ export const Search = (props: any) => {
   const [username, setUsername] = useState("");
 
   const hadnleSearch = async () => {
+
     const q = query(collection(db, "users"), where("displayName", "==", username));
 
     try {
